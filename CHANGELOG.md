@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/jeftelabs/exec/compare/v1.0.0...v1.0.1) (2026-10-18)
+
+
+### Bug Fixes
+
+* **ci:** package lock ([d60b06f](https://github.com/jeftelabs/exec/commit/d60b06f06c7e61d17752ec9a2cb2aa932ca9ca68))
+* **ci:** package lock ([55e04a9](https://github.com/jeftelabs/exec/commit/55e04a95ef623322fce02b58110273f079b5b534))
+
 ## 1.0.0 (2026-10-18)
 
 
