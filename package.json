@@ -1,0 +1,113 @@
+{
+  "name": "@jeftelabs/exec",
+  "description": "TypeScript JIT compiler built for correctness and supports legacy/experimental decorators",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "type": "module",
+  "files": [
+    "build",
+    "!build/bin",
+    "!build/tests"
+  ],
+  "main": "build/index.js",
+  "exports": {
+    ".": "./build/index.js"
+  },
+  "scripts": {
+    "pretest": "npm run lint && npm run build",
+    "test": "c8 npm run quick:test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "precompile": "npm run lint",
+    "compile": "tsup-node && tsc --emitDeclarationOnly --declaration",
+    "build": "npm run compile",
+    "version": "npm run build",
+    "prepublishOnly": "npm run build",
+    "quick:test": "node --enable-source-maps bin/test.ts",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit",
+    "commit": "cz"
+  },
+  "devDependencies": {
+    "@arapucajs/eslint-config": "^1.1.2",
+    "@arapucajs/prettier": "^1.1.1",
+    "@arapucajs/tsconfig": "^1.0.0",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@t8ngs/assert": "^1.0.0",
+    "@t8ngs/expect": "^1.1.0",
+    "@t8ngs/expect-type": "^1.2.0",
+    "@t8ngs/fs": "^1.0.0",
+    "@t8ngs/runner": "^1.0.0",
+    "@t8ngs/snapshot": "^1.0.0",
+    "@types/node": "^26.6.4",
+    "c8": "^12.0.0",
+    "commitizen": "^4.3.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7",
+    "ipaddr.js": "^2.5.0",
+    "preact": "^11.0.0",
+    "preact-render-to-string": "^6.8.0",
+    "prettier": "^3.9.9",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@swc/core": "~1.16.13",
+    "get-tsconfig": "^4.14.3"
+  },
+  "homepage": "https://github.com/jeftelabs/exec#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeftelabs/exec.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeftelabs/exec/issues"
+  },
+  "keywords": [
+    "typescript",
+    "ts-node",
+    "transpiler",
+    "tsx"
+  ],
+  "author": "Jefte Costa <jefteamorim@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "tsup": {
+    "entry": [
+      "index.ts"
+    ],
+    "outDir": "./build",
+    "clean": true,
+    "format": "esm",
+    "dts": false,
+    "sourcemap": false,
+    "target": "esnext"
+  },
+  "c8": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "prettier": "@arapucajs/prettier",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  }
+}
