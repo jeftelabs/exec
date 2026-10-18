@@ -85,6 +85,12 @@ Código que roda com o `exec` vai rodar após a compilação
 
 <br />
 
+## 📚 Documentação
+
+Consulte a [documentação completa](./docs/README.md) para guias de instalação e uso, resolução de módulos, configuração, arquitetura, desenvolvimento, testes e solução de problemas.
+
+<br />
+
 ## 📦 Instalação
 
 ```bash
@@ -279,7 +285,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma [issue](http
 
 ## 📄 Licença
 
-@jeftelabs/exec é um software de código aberto licenciado sob a [licença MIT](LICENSE.md).
+@jeftelabs/exec é um software de código aberto licenciado sob a [licença MIT](LICENSE).
 
 </div>
 
@@ -290,4 +296,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma [issue](http
 [npm-image]: https://img.shields.io/npm/v/@jeftelabs/exec.svg?style=for-the-badge&logo=npm
 [npm-url]: https://npmjs.org/package/@jeftelabs/exec 'npm'
 [license-image]: https://img.shields.io/npm/l/@jeftelabs/exec?color=blueviolet&style=for-the-badge
-[license-url]: LICENSE.md 'license'
+[license-url]: LICENSE 'license'
