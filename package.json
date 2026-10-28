@@ -52,7 +52,7 @@
     "preact": "^11.0.0",
     "preact-render-to-string": "^6.8.0",
     "prettier": "^3.9.9",
-    "tsup": "^8.5.1",
+    "tsup": "^9.0.0",
     "typescript": "^6.0.3"
   },
   "dependencies": {
